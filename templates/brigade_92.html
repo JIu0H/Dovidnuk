@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" href="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" type="image/webp">
+    <title>92 окрема штурмова бригада імені кошового отамана Івана Сірка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}">
+</head>
+<body>
+    <div class="brigade-bg"></div>
+    <div class="brigade-top">
+    <header class="brigade-header">
+        <div class="header-left">
+            <a href="/" class="home-link">
+            <img src="{{ url_for('static', filename='images/92/emblem.webp') }}" alt="Емблема 92 ОШБр" class="brigade-logo">
+            </a>
+        </div>
+        <div class="header-center">
+            <h1>92 окрема штурмова бригада імені кошового отамана Івана Сірка</h1>
+            <p class="motto">СОБІ — ЧЕСТЬ, УКРАЇНІ — СЛАВА!</p>
+        </div>
+        <div class="header-right"></div>
+    </header>
+
+    <nav class="brigade-nav">
+        <a href="#identification"><span class="nav-num">1</span> Ідентифікація</a>
+        <a href="#history"><span class="nav-num">2</span> Історія</a>
+        <a href="#regalia"><span class="nav-num">3</span> Регалії частини</a>
+        <a href="#award"><span class="nav-num">4</span> Почесна відзнака</a>
+        <a href="#combat-path"><span class="nav-num">5</span> Бойовий шлях</a>
+        <a href="#heroes"><span class="nav-num">6</span> Герої України</a>
+        <a href="#symbols"><span class="nav-num">7</span> Символіка</a>
+        <a href="#rituals"><span class="nav-num">8</span> Ритуали</a>
+        <a href="#places"><span class="nav-num">9</span> Місця сили</a>
+        <a href="#info"><span class="nav-num">10</span> Інфосупровід</a>
+    </nav>
+    </div>
+    <div class="brigade-spacer" aria-hidden="true"></div>
+
+    <main class="brigade-main">
+        <section id="identification" class="section">
+            <h2>1. Ідентифікація</h2>
+            <div class="content-block">
+                <p><strong>Повна офіційна назва:</strong> 92 окрема штурмова бригада імені кошового отамана Івана Сірка</p>
+                <p><strong>Скорочено:</strong> 92 ОШБр</p>
+                <p><strong>Підпорядкування:</strong> Сухопутні війська ЗС України, 14 армійський корпус</p>
+                <p><strong>День частини:</strong> 30 жовтня</p>
+                <p><strong>Гасло:</strong> «Собі — честь, Україні — слава!»</p>
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <h2>2. Історія створення</h2>
+            <div class="content-block">
+                <p>У 2000 році, згідно з Указом Президента України від 30 жовтня 2000 №1173, було створено 92 окрему механізовану бригаду. Відтоді її воїни гідно несуть прапор честі та відданості Україні, підтверджуючи свою мужність у найвідповідальніших місіях.</p>
+                <p>Згідно з директивою Міністра оборони України та Головнокомандувача Збройних Сил України №321 від 08 червня 2023 — 92 окрему механізовану бригаду імені кошового отамана Івана Сірка було переформовано в 92 окрему штурмову бригаду імені кошового отамана Івана Сірка.</p>
+            </div>
+        </section>
+
+        <section id="regalia" class="section">
+            <h2>3. Регалії частини</h2>
+            <div class="content-block">
+                <p>Бойовий Прапор від Президента України та почесну стрічку 92 ОШБр було вручено у місті Києві 22.08.2019 року на території Софійської площі за наказом Президента України — Верховного Головнокомандувача Збройних Сил України В. Зеленським.</p>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openGallery('banner',0)"><img src="{{ url_for('static', filename='images/92/1.webp') }}" alt="Бойовий прапор" onclick="openPhoto(this.src, this.alt||'')" ><span>Бойовий прапор</span></div>
+                    <div class="gallery-item" onclick="openGallery('banner',1)"><img src="{{ url_for('static', filename='images/92/2.webp') }}" alt="Стрічки" onclick="openPhoto(this.src, this.alt||'')" ><span>Почесні стрічки</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="award" class="section">
+            <h2>4. Почесна відзнака «За мужність та відвагу»</h2>
+            <div class="content-block">
+                <p>Відзнаку «За мужність та відвагу» 92 ОШБр вручено у місті Харків 22.08.2022 року на території площі Свободи за наказом Президента України — Верховного Головнокомандувача Збройних Сил України В. Зеленським.</p>
+            </div>
+        </section>
+
+        <section id="combat-path" class="section">
+            <h2>5. Бойовий шлях</h2>
+            <div class="content-block">
+                <h3>Основні військові операції та райони бойових дій</h3>
+                <ul class="timeline">
+                    <li><strong>З 2014:</strong> АТО/ООС — Іловайськ, Дебальцеве, Щастя, Трьохізбенка, Нижньотепле, Мар'їнка, Красногорівка, Верхньоторецьке, Авдіївка, Золоте, Попасна</li>
+                    <li><strong>Вересень 2022:</strong> контрнаступ, звільнення майже всієї Харківської області; далі — Стельмахівка — Новоселівське (Луганщина)</li>
+                    <li><strong>Березень 2023:</strong> Бахмутський напрямок — Часів Яр, Хромове</li>
+                    <li><strong>Літо 2023:</strong> ударно-штурмові дії — Кліщіївка, Андріївка (деокупація)</li>
+                    <li><strong>Травень 2024:</strong> зупинено спробу захопити Харків (Глибоке–Липці)</li>
+                    <li><strong>Серпень 2024:</strong> Курський напрямок</li>
+                    <li><strong>Осінь 2025:</strong> Добропільський контрнаступ; далі — стик Дніпропетровської, Донецької та Запорізької областей</li>
+                </ul>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openGallery('path',0)"><img src="{{ url_for('static', filename='images/92/3.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Бойова робота</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',1)"><img src="{{ url_for('static', filename='images/92/4.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>БпЛА</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',2)"><img src="{{ url_for('static', filename='images/92/5.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Штурм</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',3)"><img src="{{ url_for('static', filename='images/92/6.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Техніка</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',4)"><img src="{{ url_for('static', filename='images/92/7.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Боєць</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',5)"><img src="{{ url_for('static', filename='images/92/8.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Зв'язок</span></div>
+                </div>
+                <div class="ua-map-wrap">
+                    <h3>Карта України — райони бойових дій</h3>
+                    <p class="map-hint">Інтерактивна карта. Натисніть мітку для деталей.</p>
+                    <div id="ops-map" class="leaflet-ops-map" style="height:380px;width:100%;min-height:320px;background:#1a1a1a;border:1px solid #2C2C2C;border-radius:4px"></div>
+                    <div id="op-info">Натисніть на мітку на карті — інформація про операцію</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="heroes" class="section">
+            <h2>6. Герої України</h2>
+            <div class="content-block">
+                <h3>Герої України</h3>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/9.webp') }}" alt="Божок" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Божок Василь Миколайович</h4>
+                        <p>Брав участь у бойових діях з 2015 року. Відзначився під час боїв за Дебальцеве та Логвинове. У лютому 2015 екіпаж під його командуванням знищив три Т-72. З початком повномасштабного вторгнення — Харківщина.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/10.webp') }}" alt="Агасиєв" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Капітан Агасиєв Кирило Яшар Огли</h4>
+                        <p>Заступник командира штурмового батальйону. Підрозділ знищив 2 Т-72, 3 МТЛБ, БМП-2, 2 вантажівки та близько 10 військовослужбовців противника.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/11.webp') }}" alt="Кулагін" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Кулагін Родіон Анатолійович</h4>
+                        <p>Очолив артилерійські підрозділи під час оборони Харківщини. Дії на напрямках Куп'янськ — Великий Бурлук — Золочів.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/12.webp') }}" alt="Федосенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Федосенко Павло Юрійович</h4>
+                        <p>З 06.05.2020 очолював бригаду. Організував оборону Харкова, звільнення Малої Рогані, Вільхівки, Старого Салтова та інших н.п.; контрнаступ на Харківщині 2022.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/13.webp') }}" alt="Царенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Царенко Андрій Юрійович</h4>
+                        <p>АТО/ООС, оборона Харківщини. Організація розвідувального забезпечення та бойових завдань.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/14.webp') }}" alt="Настенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Майор Настенко Олександр Миколайович</h4>
+                        <p>Створив «CODE 9.2» — підрозділ ударних БпЛА. У 2022–2023 бійці знищили понад 2 тисячі окупантів.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/15.webp') }}" alt="Єлецький" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Лейтенант Єлецький Дмитро Юрійович</h4>
+                        <p>Командир роти БпАК. Ліквідовано щонайменше 230 окупантів, знищено Т-72, БМП, гаубиці. Курщина 2024–2025. Звання присвоєно посмертно (фото 15, 16).</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src, 'Єлецький')"><img src="{{ url_for('static', filename='images/92/16.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Єлецький Д.Ю.</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src, 'Золота Зірка')"><img src="{{ url_for('static', filename='images/92/17.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Золота Зірка</span></div>
+                </div>
+
+                <h3>Звання Героя України присвоєно посмертно</h3>
+                <ul>
+                    <li>Адамовський Олег Олегович — Указ № 201/2022 від 02.04.2022</li>
+                    <li>Миршавий Олексій Вікторович — Указ № 394/2023 від 08.07.2023</li>
+                    <li>Храпко Євген Вікторович — Указ № 399/2023 від 08.07.2023</li>
+                    <li>Щоголев Іван Євгенович — Указ № 410/2023 від 08.07.2023</li>
+                    <li>Дробіленко Андрій Іванович — Указ № 656/2023 від 29.09.2023</li>
+                    <li>Єрофєєв Макар Володимирович — Указ № 557/2024 від 23.08.2024</li>
+                </ul>
+
+                <h3>Повні кавалери державних орденів</h3>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/18.webp') }}" alt="Нащубський" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Нащубський Віталій Іванович</h4>
+                        <p class="decree">Орден Богдана Хмельницького I ступеня — Указ № 685/2025 від 05.08.2025</p>
+                        <p>Командир військової частини з 03.08.2024. Оборона Харкова, штурмові дії на Дніпропетровщині.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/19.webp') }}" alt="Третяк" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Третяк Андрій Олександрович</h4>
+                        <p>Заступник командира бригади. Утримання стратегічних позицій, умови для наступальних дій.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/20.webp') }}" alt="Лешко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Лешко Костянтин Сергійович</h4>
+                        <p class="decree">Орден «За мужність» І ступеня №346 від 27.04.2026</p>
+                        <p>Командир штурмового батальйону. Харків, Андріївка, Кліщіївка, Хромове.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/21.webp') }}" alt="Сторожук" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Майор Сторожук Єгор Ігорович</h4>
+                        <p>Командир штурмового батальйону. Бахмутський, Курський, Покровський напрямки.</p>
+                    </div>
+                </div>
+
+                <h3>Нагороди бригади (загалом)</h3>
+                <ul>
+                    <li>Орден «Золота Зірка»: 5 (6 посмертно; 2 служать у 92 ОШБр)</li>
+                    <li>Орден Богдана Хмельницького І / ІІ / ІІІ ст.: 5 / 20 / 21</li>
+                    <li>Орден Данила Галицького: 7</li>
+                    <li>Орден «За мужність» І / ІІ / ІІІ ст.: 1 / 38 / 964</li>
+                    <li>Медаль «За військову службу Україні»: 582</li>
+                    <li>Медаль «Захиснику Вітчизни»: 2746</li>
+                    <li>Відзнака «За оборону України»: 106</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="symbols" class="section">
+            <h2>7. Символіка військової частини</h2>
+            <div class="content-block">
+                <p>Нарукавний знак поєднує символи військової звитяги, історичної спадкоємності та незламності.</p>
+                <h3>«Яничарки»</h3>
+                <p>Дві схрещені золоті рушниці запорозьких козаків — готовність до захисту та військова доблесть.</p>
+                <img src="{{ url_for('static', filename='images/92/22.webp') }}" alt="Яничарки" class="symbol-img" onclick="openPhoto(this.src, this.alt)">
+                <h3>Палісад</h3>
+                <p>Стилізований палісад — образ укріплення, надійної оборони та незламного рубежу.</p>
+                <img src="{{ url_for('static', filename='images/92/23.webp') }}" alt="Палісад" class="symbol-img" onclick="openPhoto(this.src, this.alt)">
+                <h3>Композиція</h3>
+                <p>Єдність та вірність обов'язку.</p>
+                <img src="{{ url_for('static', filename='images/92/24.webp') }}" alt="Композиція" class="symbol-img" onclick="openPhoto(this.src, this.alt)">
+                <img src="{{ url_for('static', filename='images/92/emblem.webp') }}" alt="Емблема 92" class="symbol-img" onclick="openPhoto(this.src, this.alt)">
+                <h3>Шеврони підрозділів</h3>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'Шеврони')"><img src="{{ url_for('static', filename='images/92/25.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Шеврони</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'Штандарти')"><img src="{{ url_for('static', filename='images/92/26.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Штандарти XCII</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rituals" class="section">
+            <h2>8. Власні ритуали та звичаї</h2>
+            <div class="content-block">
+                <h3>Посвята в козаки</h3>
+                <p>Після завершення БЗВП — символічний перехід до повноцінного виконання військового обов'язку.</p>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/27.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Посвята</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/28.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Обряд</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/29.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Традиція</span></div>
+                </div>
+                <h3>Вручення військового берета</h3>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/30.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Берет</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/31.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Строй</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/32.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Присяга</span></div>
+                </div>
+                <h3>Присяга бійця 92 ОШБр</h3>
+                <p>«Собі – Честь! Україні – Слава!»</p>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/33.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Присяга / стрій</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/34.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Мотиваційний прапор</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/35.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Штандарти</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/36.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Вручення штандартів</span></div>
+                </div>
+                <h3>Коїни та відзнаки</h3>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/37.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Коїн (аверс)</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/38.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Коїн XCII</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'')"><img src="{{ url_for('static', filename='images/92/39.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Нагрудний знак</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="places" class="section">
+            <h2>9. Місця сили</h2>
+            <div class="content-block">
+                <p><strong>Капулівка</strong> (Дніпропетровська область) — місце поховання кошового отамана Івана Сірка, чиє ім'я носить бригада. До повномасштабної війни щороку в серпні військовослужбовці приїжджали до могили отамана для посвяти новоприбулих воїнів у козаки.</p>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src,'Капулівка')"><img src="{{ url_for('static', filename='images/92/40.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Капулівка — місце сили</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info" class="section">
+            <h2>10. Інформаційний супровід</h2>
+            <div class="content-block">
+                <h3>Соціальні мережі</h3>
+                <div class="social-links">
+<a href="https://instagram.com/92_brygada" target="_blank" rel="noopener" class="social-icon" title="instagram" aria-label="instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg></a>
+<a href="https://facebook.com/92ndSAB" target="_blank" rel="noopener" class="social-icon" title="facebook" aria-label="facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+<a href="https://youtube.com/@92oshbr" target="_blank" rel="noopener" class="social-icon" title="youtube" aria-label="youtube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6c-.3-1-1.1-1.8-2.1-2.1C18.6 4 12 4 12 4s-6.6 0-8.4.3c-1 .3-1.8 1.1-2.1 2.1C1 8.2 1 12 1 12s0 3.8.5 5.6c.3 1 1.1 1.8 2.1 2.1C5.4 20 12 20 12 20s6.6 0 8.4-.3c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.6.5-5.6zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+<a href="https://t.me/brigada92_war" target="_blank" rel="noopener" class="social-icon" title="telegram" aria-label="telegram"><svg viewBox="0 0 24 24"><path d="M9.8 14.8l-.4 5.1c.5 0 .8-.2 1.1-.5l2.6-2.5 5.4 4c1 .5 1.7.3 2-.9L22.8 4c.3-1.3-.5-1.9-1.5-1.5L2.4 9.3c-1.3.5-1.2 1.2-.2 1.5l5.1 1.6 11.8-7.4c.6-.3 1.1-.2.7.2L9.8 14.8z"/></svg></a>
+<a href="https://tiktok.com/@92brigada92" target="_blank" rel="noopener" class="social-icon" title="tiktok" aria-label="tiktok"><svg viewBox="0 0 24 24"><path d="M19.6 8.2a6.5 6.5 0 01-3.7-1.2v7.1a5.9 5.9 0 11-5.9-5.9c.3 0 .6 0 .9.1v2.9a3 3 0 00-.9-.1 3 3 0 103 3V2h2.8a6.5 6.5 0 003.8 3.6v2.6z"/></svg></a>
+</div>
+                <h3 class="films-title" style="color:#FFBD1B">Документальні фільми</h3>
+                <ul class="films-list">
+                    <li><a href="https://www.youtube.com/watch?v=ouwKJbP7ptg" target="_blank" rel="noopener" style="color:#FFBD1B">Харківський контрнаступ «Звільнити Куп'янськ за три дні»</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=E2XccSL3Hlw" target="_blank" rel="noopener" style="color:#FFBD1B">Операція на Харківщині «Два погляди на Берлін»</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="brigade-footer"><a href="/" class="back-link">← На головну</a><p>© 2026. All rights reserved.</p><p class="demo-note">Demonstration version. Not for distribution.</p></footer>
+
+    </div>
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="{{ url_for('static', filename='brigade-nav.js') }}"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+<script>
+(function(){
+  var gallery = [], idx = 0;
+  function ensureLightbox(){
+    var old = document.getElementById('lightbox');
+    if (old) old.remove();
+    var lb = document.createElement('div');
+    lb.id = 'lightbox';
+    lb.className = 'lightbox';
+    lb.innerHTML =
+      '<button type="button" class="lb-btn lb-close" aria-label="Close">\u00d7</button>' +
+      '<button type="button" class="lb-btn lb-prev" aria-label="Prev">\u2039</button>' +
+      '<img id="lb-img" src="" alt="">' +
+      '<button type="button" class="lb-btn lb-next" aria-label="Next">\u203a</button>' +
+      '<div class="lb-caption" id="lb-caption"></div>';
+    document.body.appendChild(lb);
+    lb.querySelector('.lb-close').onclick = function(e){ e.stopPropagation(); closeLb(); };
+    lb.querySelector('.lb-prev').onclick = function(e){ e.stopPropagation(); show(idx - 1); };
+    lb.querySelector('.lb-next').onclick = function(e){ e.stopPropagation(); show(idx + 1); };
+    lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  }
+  function collect(){
+    gallery = [];
+    document.querySelectorAll('main img, .section img, .gallery img, .hero-photo, .symbol-img').forEach(function(img){
+      if (!img.src || img.id === 'lb-img' || img.closest('#lightbox')) return;
+      if (img.classList.contains('zsu-emblem') || img.classList.contains('cat-emblem')) return;
+      gallery.push({src: img.currentSrc || img.src, alt: img.alt || ''});
+    });
+  }
+  function show(i){
+    if (!gallery.length) return;
+    idx = (i + gallery.length) % gallery.length;
+    var img = document.getElementById('lb-img');
+    var cap = document.getElementById('lb-caption');
+    img.src = gallery[idx].src;
+    img.alt = gallery[idx].alt;
+    if (cap) cap.textContent = gallery[idx].alt || ((idx+1)+' / '+gallery.length);
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLb(){
+    var lb = document.getElementById('lightbox');
+    if (lb) lb.classList.remove('active');
+  }
+  window.openPhoto = function(src, alt){
+    ensureLightbox();
+    collect();
+    var i = gallery.findIndex(function(g){ return g.src === src || g.src.indexOf(src.split('/').pop()) >= 0; });
+    if (i < 0) { gallery.push({src: src, alt: alt||''}); i = gallery.length-1; }
+    show(i);
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    // remove any pre-existing lightbox nodes
+    document.querySelectorAll('#lightbox, .lightbox').forEach(function(n){ n.remove(); });
+    ensureLightbox();
+    collect();
+    document.querySelectorAll('main img, .section img, .gallery img').forEach(function(img){
+      if (img.id === 'lb-img') return;
+      img.style.cursor = 'pointer';
+      img.onclick = function(e){
+        e.preventDefault(); e.stopPropagation();
+        openPhoto(img.currentSrc || img.src, img.alt || '');
+      };
+    });
+    document.addEventListener('keydown', function(e){
+      var lb = document.getElementById('lightbox');
+      if (!lb || !lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Збройні Сили України</title>
+<link rel="icon" href="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" type="image/webp">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="bg-overlay"></div>
+
+<header class="header">
+  <div class="header-bar">
+    <a href="/" class="logo-link" id="logoLink">
+      <img src="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" alt="" class="zsu-emblem">
+      <span class="logo-text">Збройні Сили України</span>
+    </a>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="top-nav" id="topNav">
+      <button type="button" class="nav-tab" data-panel="structure">Структура ЗСУ</button>
+      <button type="button" class="nav-tab" data-panel="flags">Бойові прапори</button>
+      <button type="button" class="nav-tab" data-panel="heroes">Герої України</button>
+      <button type="button" class="nav-tab" data-panel="cavaliers">Кавалери державних орденів</button>
+      <button type="button" class="nav-tab" data-panel="patches">Нарукавні знаки</button>
+      <button type="button" class="nav-tab" data-panel="combatpath">Бойовий шлях</button>
+      <button type="button" class="nav-tab" data-panel="methodics">Методичні матеріали</button>
+    </nav>
+    <div class="search-wrap" id="searchWrap">
+      <button type="button" class="search-toggle" id="searchToggle" aria-label="Пошук">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+    </div>
+    <div class="search-row" id="searchRow">
+      <div class="search-row-track" id="searchRowTrack">
+        <form class="search-form" id="searchForm">
+          <input type="text" id="searchInput" placeholder="Пошук бригад, корпусів, підрозділів..." autocomplete="off">
+          <button type="submit" class="search-btn">Знайти</button>
+          <button type="button" class="search-btn search-x" id="searchClose" aria-label="Закрити">×</button>
+        </form>
+        <div id="searchResults" class="search-results" hidden></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="nav-panels">
+  <div class="nav-panel" id="panel-structure">
+    <div class="panel-inner">
+      <h2>Структура Збройних Сил України</h2>
+      <p class="panel-lead">Оберіть вид військ → розгорніть корпус → перейдіть до бригади.</p>
+      <div class="structure-grid">
+        {% for cat in structure %}
+        <div class="structure-block{% if cat.id == 'ground' %} structure-block--wide{% endif %}" data-id="{{ cat.id }}">
+          <button type="button" class="structure-toggle" onclick="toggleCategory('{{ cat.id }}')">
+            <img src="{{ url_for('static', filename='images/' + cat.emblem) }}" class="cat-emblem" alt="">
+            <span class="structure-toggle-title">{{ cat.name }}</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="sublist" id="sub-{{ cat.id }}">
+            <div class="corps-grid {% if cat.id == 'ground' %}corps-grid-2{% endif %}">
+            {% for corps in cat.corps %}
+            <div class="corps-block">
+              <button type="button" class="corps-toggle" onclick="toggleCorps(this)">
+                <span class="corps-name-label">{{ corps.name }}</span>
+                <span class="corps-expand">Розгорнути склад ▾</span>
+              </button>
+              <ul class="corps-units">
+                {% for u in corps.units %}
+                <li>
+                  {% if u is mapping and u.url %}
+                  <a href="{{ u.url }}" class="brigade-link">
+                    {% if u.emblem %}<img src="{{ url_for('static', filename='images/' + u.emblem) }}" class="brigade-emblem" alt="">{% endif %}
+                    {{ u.name }}
+                  </a>
+                  {% elif u is mapping %}
+                  <span class="unit-name">{{ u.name }}</span>
+                  {% else %}
+                  <span class="unit-name">{{ u }}</span>
+                  {% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% for cat in right_categories %}
+  <div class="nav-panel" id="panel-{{ cat.id }}">
+    <div class="panel-inner">
+      <h2>{{ cat.name }}</h2>
+      <p class="panel-lead">Оберіть вид військ → розгорніть корпус → перейдіть до бригади.</p>
+      <div class="structure-grid">
+        {% for branch in structure %}
+        <div class="structure-block{% if branch.id == 'ground' %} structure-block--wide{% endif %}" data-id="{{ cat.id }}-{{ branch.id }}">
+          <button type="button" class="structure-toggle" onclick="toggleCategory('{{ cat.id }}-{{ branch.id }}')">
+            <img src="{{ url_for('static', filename='images/' + branch.emblem) }}" class="cat-emblem" alt="">
+            <span class="structure-toggle-title">{{ branch.name }}</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="sublist" id="sub-{{ cat.id }}-{{ branch.id }}">
+            <div class="corps-grid {% if branch.id == 'ground' %}corps-grid-2{% endif %}">
+            {% for corps in branch.corps %}
+            <div class="corps-block">
+              <button type="button" class="corps-toggle" onclick="toggleCorps(this)">
+                <span class="corps-name-label">{{ corps.name }}</span>
+                <span class="corps-expand">Розгорнути склад ▾</span>
+              </button>
+              <ul class="corps-units">
+                {% for u in corps.units %}
+                <li>
+                  {% if u is mapping and u.url %}
+                  <a href="{{ u.url }}{% if cat.anchor %}{{ cat.anchor }}{% endif %}" class="brigade-link">
+                    {% if u.emblem %}<img src="{{ url_for('static', filename='images/' + u.emblem) }}" class="brigade-emblem" alt="">{% endif %}
+                    {{ u.name }}
+                  </a>
+                  {% elif u is mapping %}
+                  <span class="unit-name">{{ u.name }}</span>
+                  {% else %}
+                  <span class="unit-name">{{ u }}</span>
+                  {% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="nav-panel" id="panel-methodics">
+    <div class="panel-inner">
+      <h2>Методичні матеріали</h2>
+      <p class="panel-lead">Статути, бойові статути, посібники та рекомендації для командирів і штабів.</p>
+      <div class="materials-grid">
+        {% for m in materials %}
+        <a class="material-card" href="{{ m.url }}">
+          <span class="material-kind">{{ m.kind }}</span>
+          <span class="material-name">{{ m.name }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="main-home">
+  <section class="news-full">
+    <h2 class="section-title">Новини бригад</h2>
+    <div class="news-grid">
+      {% if news %}
+        {% for item in news %}
+        <a href="{{ item.link }}" target="_blank" rel="noopener" class="news-item">
+          <span class="news-date">{{ item.date }}</span>
+          <span class="news-title">{{ item.title }}</span>
+        </a>
+        {% endfor %}
+      {% else %}
+        <p class="news-empty">Немає публікацій за останній день.</p>
+      {% endif %}
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026. All rights reserved.</p>
+</footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
