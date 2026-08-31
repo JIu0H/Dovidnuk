@@ -1,4 +1,5 @@
-/* Keep the brigade chapter plaque fixed. Hash links offset by bar height. */
+/* Keep the brigade chapter plaque fixed. Hash links offset by bar height.
+   Active tab follows the section currently on screen. */
 (function () {
   function pin() {
     var bar = document.querySelector(".brigade-top");
@@ -23,6 +24,39 @@
     });
   }
 
+  function spy() {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll(".brigade-nav a[href^='#']")
+    );
+    if (!links.length) return;
+    var h = pin();
+    var line = window.pageYOffset + h + 28;
+    var current = links[0].getAttribute("href");
+    links.forEach(function (a) {
+      var el = document.querySelector(a.getAttribute("href"));
+      if (!el) return;
+      if (el.offsetTop <= line) current = a.getAttribute("href");
+    });
+    var last = document.querySelector(links[links.length - 1].getAttribute("href"));
+    if (
+      last &&
+      window.innerHeight + window.pageYOffset >=
+        document.documentElement.scrollHeight - 8
+    ) {
+      current = links[links.length - 1].getAttribute("href");
+    }
+    markActive(current);
+  }
+
+  var spyTick = 0;
+  function onScroll() {
+    if (spyTick) return;
+    spyTick = requestAnimationFrame(function () {
+      spyTick = 0;
+      spy();
+    });
+  }
+
   function bind() {
     pin();
     document.querySelectorAll(".brigade-nav a[href^='#']").forEach(function (a) {
@@ -41,7 +75,10 @@
       setTimeout(function () {
         go(location.hash);
       }, 40);
+    } else {
+      spy();
     }
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   window.addEventListener("resize", pin);
