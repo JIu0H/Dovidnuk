@@ -30,16 +30,16 @@ RIGHT_CATEGORIES = [
 ]
 
 MATERIALS = [
-    {"kind": "Статут", "name": "Статут внутрішньої служби Збройних Сил України", "url": "#methodics"},
-    {"kind": "Статут", "name": "Стройовий статут Збройних Сил України", "url": "#methodics"},
-    {"kind": "Статут", "name": "Статут гарнізонної та вартової служб Збройних Сил України", "url": "#methodics"},
-    {"kind": "Статут", "name": "Дисциплінарний статут Збройних Сил України", "url": "#methodics"},
-    {"kind": "Бойовий статут", "name": "Бойовий статут Сухопутних військ. Частина II (батальйон, рота)", "url": "#methodics"},
-    {"kind": "Бойовий статут", "name": "Бойовий статут Сухопутних військ. Частина III (взвод, відділення, танк)", "url": "#methodics"},
-    {"kind": "Посібник", "name": "Рекомендації з морально-психологічного забезпечення", "url": "#methodics"},
-    {"kind": "Посібник", "name": "Пам'ятка командиру підрозділу щодо роботи з особовим складом", "url": "#methodics"},
-    {"kind": "Посібник", "name": "Методичні рекомендації з бойової підготовки підрозділу", "url": "#methodics"},
-    {"kind": "Наказ", "name": "Організація внутрішньої комунікації у військовій частині", "url": "#methodics"},
+    {"kind": "Статут", "name": "Статут внутрішньої служби Збройних Сил України", "url": "#knowledge"},
+    {"kind": "Статут", "name": "Стройовий статут Збройних Сил України", "url": "#knowledge"},
+    {"kind": "Статут", "name": "Статут гарнізонної та вартової служб Збройних Сил України", "url": "#knowledge"},
+    {"kind": "Статут", "name": "Дисциплінарний статут Збройних Сил України", "url": "#knowledge"},
+    {"kind": "Бойовий статут", "name": "Бойовий статут Сухопутних військ. Частина II (батальйон, рота)", "url": "#knowledge"},
+    {"kind": "Бойовий статут", "name": "Бойовий статут Сухопутних військ. Частина III (взвод, відділення, танк)", "url": "#knowledge"},
+    {"kind": "Посібник", "name": "Рекомендації з морально-психологічного забезпечення", "url": "#knowledge"},
+    {"kind": "Посібник", "name": "Пам'ятка командиру підрозділу щодо роботи з особовим складом", "url": "#knowledge"},
+    {"kind": "Посібник", "name": "Методичні рекомендації з бойової підготовки підрозділу", "url": "#knowledge"},
+    {"kind": "Наказ", "name": "Організація внутрішньої комунікації у військовій частині", "url": "#knowledge"},
 ]
 
 
@@ -124,16 +124,25 @@ def search():
             if match(cat.get("name", "")):
                 add("Розділ", cat["name"], "/#" + cat["id"])
 
-        if match("методичн") or match("статут") or match("посібник") or match("матеріал"):
-            add("Розділ", "Методичні матеріали", "/#methodics")
+        if match("база знань") or match("базу знань") or match("методичн") or match("статут") or match("посібник") or match("матеріал"):
+            add("Розділ", "База знань", "/#knowledge")
         for m in MATERIALS:
             if match(m["name"]) or match(m["kind"]):
-                add(m["kind"], m["name"], "/#methodics")
+                add(m["kind"], m["name"], "/#knowledge")
 
     return jsonify({"query": query, "results": results[:40]})
 
 
-@app.route("/static/images/<path:filename>")
+@app.route("/download-update.zip")
+def download_update_zip():
+    d = os.path.join(app.root_path, "static")
+    return send_from_directory(d, "zsu-update.zip", as_attachment=True, download_name="zsu-update.zip")
+
+
+@app.route("/download-update.tar.gz")
+def download_update_tar():
+    d = os.path.join(app.root_path, "static")
+    return send_from_directory(d, "zsu-update.tar.gz", as_attachment=True, download_name="zsu-update.tar.gz")
 def serve_image(filename):
     return send_from_directory(os.path.join(app.root_path, "static", "images"), filename)
 
