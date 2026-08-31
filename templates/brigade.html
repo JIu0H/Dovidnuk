@@ -2,13 +2,14 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" type="image/webp">
     <title>37-ма окрема бригада морської піхоти | На хвилі Перемоги</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}?v=37b">
 </head>
-<body>
+<body class="page-37">
     <div class="brigade-bg"></div>
+    
     <div class="brigade-top">
     <header class="brigade-header">
         <div class="header-left">
@@ -24,24 +25,23 @@
     </header>
 
     <nav class="brigade-nav">
-        <a href="#identification"><span class="nav-num">1</span> Ідентифікація</a>
-        <a href="#history"><span class="nav-num">2</span> Історія</a>
-        <a href="#regalia"><span class="nav-num">3</span> Регалії частини</a>
-        <a href="#award"><span class="nav-num">4</span> Почесна відзнака</a>
-        <a href="#honor-name"><span class="nav-num">5</span> Почесне найменування</a>
-        <a href="#combat-path"><span class="nav-num">6</span> Бойовий шлях</a>
-        <a href="#heroes"><span class="nav-num">7</span> Герої України</a>
-        <a href="#symbols"><span class="nav-num">8</span> Символіка</a>
-        <a href="#rituals"><span class="nav-num">9</span> Ритуали</a>
-        <a href="#places"><span class="nav-num">10</span> Місця сили</a>
-        <a href="#info"><span class="nav-num">11</span> Інфосупровід</a>
+        <a href="#identification" class="active"><span class="nav-num">1.</span> Ідентифікація</a>
+        <a href="#history"><span class="nav-num">2.</span> Історія</a>
+        <a href="#regalia"><span class="nav-num">3.</span> Регалії частини</a>
+        <a href="#combat-path"><span class="nav-num">4.</span> Бойовий шлях</a>
+        <a href="#heroes"><span class="nav-num">5.</span> Герої України</a>
+        <a href="#cavaliers"><span class="nav-num">6.</span> Кавалери</a>
+        <a href="#symbols"><span class="nav-num">7.</span> Символіка</a>
+        <a href="#rituals"><span class="nav-num">8.</span> Ритуали</a>
+        <a href="#info"><span class="nav-num">9.</span> Інфосупровід</a>
     </nav>
+
     </div>
     <div class="brigade-spacer" aria-hidden="true"></div>
 
     <main class="brigade-main">
         <section id="identification" class="section">
-                        <h2>1. Ідентифікація</h2>
+            <h2>1. Ідентифікація</h2>
             <div class="content-block">
                 <p><strong>Повна офіційна назва військової частини:</strong></p>
                 <p>Військова частина А4548 — 37 окрема бригада морської піхоти 30 корпусу морської піхоти Військово-Морських Сил Морська піхота Збройних сил України</p>
@@ -50,7 +50,7 @@
         </section>
 
         <section id="history" class="section">
-                        <h2>2. Історія створення</h2>
+            <h2>2. Історія створення</h2>
             <div class="content-block">
                 <p>На виконання вимог Директиви Міністерства оборони України та Головнокомандувача Збройних Сил України від 5 грудня 2022 № Д-321/24/ДСК та на виконання вимог Наказу Командування Військово-Морських Сил Збройних сил України від 6 грудня 2022 №103/ОШР/ДСК.</p>
                 <p><strong>День військової частини:</strong> 12.01.2023</p>
@@ -58,191 +58,133 @@
         </section>
 
         <section id="regalia" class="section">
-                        <h2>3. Регалії частини</h2>
-            <div class="content-block">
-                <p>01 жовтня 2023 року – Президент України – Верховний Головнокомандувач Збройних Сил України вручив командиру 37 окремої бригади морської піхоти Бойовий Прапор та Грамоту Президента України.</p>
-                
+            <h2>3. Регалії частини</h2>
+            <div class="content-block content-flat">
+                <h3>Бойовий прапор</h3>
+                <p>01 жовтня 2023 року Президент України — Верховний Головнокомандувач Збройних Сил України вручив командиру 37 окремої бригади морської піхоти Бойовий Прапор та Грамоту Президента України.</p>
                 <div class="gallery" id="gallery-banner">
-                    <div class="gallery-item" onclick="openLightbox(0, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-front.webp') }}" alt="Лицьова сторона" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>1. Бойовий прапор (лицьова сторона)</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(1, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-back.webp') }}" alt="Тильна сторона" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>2. Бойовий прапор (тильна сторона)</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(2, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-certificate.webp') }}" alt="Грамота" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>3. Грамота Президента України</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(3, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" alt="Церемонія" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>4. Церемонія вручення бойового прапору</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(4, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-2.webp') }}" alt="Передача 3" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>5. Церемонія передачі бойового прапора</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(5, 'banner')">
-                        <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-3.webp') }}" alt="Передача" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>6. Церемонія передачі бойового прапора</span>
-                    </div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-banner-front.webp') }}" alt="Бойовий прапор — лицьова сторона"><span>Бойовий прапор (лицьова сторона)</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-banner-back.webp') }}" alt="Бойовий прапор — тильна сторона"><span>Бойовий прапор (тильна сторона)</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-banner-certificate.webp') }}" alt="Грамота Президента України"><span>Грамота Президента України</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" alt="Церемонія вручення бойового прапора"><span>Церемонія вручення бойового прапора</span></div>
                 </div>
-            </div>
-        </section>
-
-        <section id="award" class="section">
-                        <h2>4. Почесна відзнака «За мужність та відвагу»</h2>
-            <div class="content-block">
-                <p>23 травня 2025 року – Указом Президента України від 23.05.2025 № 316/2025 нагороджена почесною відзнакою «За мужність та відвагу».</p>
-                
-                <div class="gallery" id="gallery-award">
-                    <div class="gallery-item" onclick="openLightbox(0, 'award')">
-                        <img src="{{ url_for('static', filename='images/37/37-award-courage.webp') }}" alt="Відзнака" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>1. Почесна відзнака «За мужність та відвагу»</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(1, 'award')">
-                        <img src="{{ url_for('static', filename='images/37/37-award-on-banner.webp') }}" alt="На прапорі" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>2. Почесна відзнака на бойовому прапорі</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(2, 'award')">
-                        <img src="{{ url_for('static', filename='images/37/37-award-ceremony.webp') }}" alt="Церемонія" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>3. Церемонія вручення почесної відзнаки</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="honor-name" class="section">
-                        <h2>5. Почесне найменування</h2>
-            <div class="content-block">
-                <p><em>В розробці:</em> проєкт Указу Президента України про присвоєння почесного найменування імені гетьмана Самійло Кішки.</p>
+                <h3>Почесна відзнака «За мужність та відвагу»</h3>
+                <p>Указ Президента України від 23.05.2023 № 316/2025. Бригаду відзначено за мужність і героїзм, виявлені під час захисту державного суверенітету та територіальної цілісності України.</p>
+                <h3>Почесне найменування</h3>
+                <p>У розробці: проєкт Указу Президента України про присвоєння почесного найменування імені гетьмана Самійла Кішки.</p>
             </div>
         </section>
 
         <section id="combat-path" class="section">
-                        <h2>6. Бойовий шлях</h2>
-            <div class="content-block">
-                <p><strong>Основні військові операції та райони бойових дій:</strong></p>
-                <ul class="timeline">
-                    <li><strong>12.01.2023 – 30.04.2023</strong> — формування батальйону та проведення бойового злагодження і підготовки до виконання бойових (спеціальних) завдань.</li>
-                    <li><strong>01.05.2023 – 29.09.2023</strong> — виконання бойових (спеціальних) завдань у складі ОТУ «Донецьк» ОСУВ «Хортиця» на Авдіївському напрямку.</li>
-                    <li><strong>29.09.2023 – 11.10.2024</strong> — виконання бойових (спеціальних) завдань у складі Угруповання морської піхоти «Катран» в наступальній операції по форсуванню та зайнятті визначеного плацдарму на лівому березі р. Дніпро в н.п. КРИНКИ Херсонської області.</li>
-                    <li><strong>01.06.2024 – 31.08.2024</strong> — 1 батальйон морської піхоти 37 обрмп приймав активну участь у складі ТГр «Велика Новосілка» в н.п. Старомайорське Донецької області, для проведення наступальних та оборонних дій.</li>
-                    <li><strong>20.08.2024 – 15.11.2024</strong> — 2 батальйон морської піхоти 37 обрмп у складі БТГр на основі 28 і 150 батальйонів приймали активну участь у оборонній операції в н.п. Торецьк Донецької області.</li>
-                    <li><strong>12.10.2024 – 17.06.2025</strong> — виконання бойових (спеціальних) завдань у складі ТГр «Вугледар» ОТУ «Донецьк».</li>
-                    <li><strong>18.06.2025 – теперішній час</strong> — виконання бойових (спеціальних) завдань у складі 20 АК ВМС України на Олександрівському напрямку.</li>
-                </ul>
-
+            <h2>4. Бойовий шлях</h2>
+            <div class="content-block content-flat">
+                <div class="ops-list">
+                    <article class="campaign" data-op="1">
+                        <h3>1. Формування</h3>
+                        <p class="ops-lead">Формування · 12 січня 2023 — 30 квітня 2023</p>
+                        <div class="ops-full"><p>З 12.01.2023 по 30.04.2023 — формування батальйону та проведення бойового злагодження і підготовки до виконання бойових (спеціальних) завдань.</p></div>
+                    </article>
+                    <article class="campaign" data-op="2">
+                        <h3>2. Авдіївський напрямок</h3>
+                        <p class="ops-lead">Бойові (спеціальні) завдання · ОТУ «Донецьк» ОСУВ «Хортиця» · 01 травня 2023 — 29 вересня 2023</p>
+                        <div class="ops-full"><p>З 01.05.2023 по 29.09.2023 — виконання бойових (спеціальних) завдань у складі ОТУ «Донецьк» ОСУВ «Хортиця» на Авдіївському напрямку.</p></div>
+                    </article>
+                    <article class="campaign" data-op="3">
+                        <h3>3. Кринки</h3>
+                        <p class="ops-lead">Наступальна операція · н.п. Кринки Херсонської області, лівий берег Дніпра · 29 вересня 2023 — 11 жовтня 2024</p>
+                        <div class="ops-full"><p>З 29.09.2023 по 11.10.2024 — виконання бойових (спеціальних) завдань у складі Угруповання морської піхоти «Катран» в наступальній операції з форсування та зайняття плацдарму на лівому березі Дніпра в н.п. Кринки Херсонської області.</p></div>
+                    </article>
+                    <article class="campaign" data-op="4">
+                        <h3>4. Старомайорське</h3>
+                        <p class="ops-lead">Наступальні та оборонні дії · н.п. Старомайорське Донецької області · 01 червня 2024 — 31 серпня 2024</p>
+                        <div class="ops-full"><p>З 01.06.2024 по 31.08.2024 1 батальйон морської піхоти 37 окремої бригади морської піхоти брав участь у складі тактичної групи «Велика Новосілка» в н.п. Старомайорське Донецької області.</p></div>
+                    </article>
+                    <article class="campaign" data-op="5">
+                        <h3>5. Торецьк</h3>
+                        <p class="ops-lead">Оборонна операція · н.п. Торецьк Донецької області · 20 серпня 2024 — 15 листопада 2024</p>
+                        <div class="ops-full"><p>З 20.08.2024 по 15.11.2024 2 батальйон морської піхоти 37 окремої бригади морської піхоти у складі БТГр на основі 28 і 150 батальйонів брав участь в оборонній операції в н.п. Торецьк Донецької області.</p></div>
+                    </article>
+                    <article class="campaign" data-op="6">
+                        <h3>6. Вугледар</h3>
+                        <p class="ops-lead">Бойові (спеціальні) завдання · ТГр «Вугледар» ОТУ «Донецьк» · 12 жовтня 2024 — 17 червня 2025</p>
+                        <div class="ops-full"><p>З 12.10.2024 по 17.06.2025 — виконання бойових (спеціальних) завдань у складі тактичної групи «Вугледар» ОТУ «Донецьк».</p></div>
+                    </article>
+                    <article class="campaign" data-op="7">
+                        <h3>7. Олександрівський напрямок</h3>
+                        <p class="ops-lead">Бойові (спеціальні) завдання · 20 армійський корпус ВМС України · 18 червня 2025 — дотепер</p>
+                        <div class="ops-full"><p>З 18.06.2025 — виконання бойових (спеціальних) завдань у складі 20 армійського корпусу Військово-Морських Сил України на Олександрівському напрямку.</p></div>
+                    </article>
+                </div>
                 <div class="gallery" id="gallery-combat">
-                    <div class="gallery-item" onclick="openLightbox(0, 'combat')">
-                        <img src="{{ url_for('static', filename='images/37/37-amx10-rc.webp') }}" alt="AMX-10RC" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>1. Розрахунок AMX-10RC</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(1, 'combat')">
-                        <img src="{{ url_for('static', filename='images/37/37-spg-ready.webp') }}" alt="СПГ" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>2. Підготовка СПГ до пострілу</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(2, 'combat')">
-                        <img src="{{ url_for('static', filename='images/37/37-apkws.webp') }}" alt="APKWS" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>3. Розрахунок APKWS</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(3, 'combat')">
-                        <img src="{{ url_for('static', filename='images/37/37-combat-duty.webp') }}" alt="Чергування" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>4. Військовослужбовець на бойовому чергуванні</span>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox(4, 'combat')">
-                        <img src="{{ url_for('static', filename='images/37/37-boats.webp') }}" alt="Човни" onclick="openPhoto(this.src, this.alt||'')" >
-                        <span>5. Військовослужбовці на човнах</span>
-                    </div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-amx10-rc.webp') }}" alt="Розрахунок AMX-10RC"><span>Розрахунок AMX-10RC</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-spg-ready.webp') }}" alt="Підготовка СПГ"><span>Підготовка СПГ до пострілу</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-apkws.webp') }}" alt="Розрахунок APKWS"><span>Розрахунок APKWS</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-combat-duty.webp') }}" alt="Бойове чергування"><span>Військовослужбовець на бойовому чергуванні</span></div>
+                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/37/37-boats.webp') }}" alt="Човни"><span>Військовослужбовці на човнах</span></div>
                 </div>
             </div>
-        
-                
-</div>
-</div>
-
-        
-                </div>
-
-        
-                </div>
-
-        
-                <div class="ua-map-wrap">
-                    <h3>Карта України — райони бойових дій</h3>
-                    <p class="map-hint">Інтерактивна карта (OpenStreetMap). Натисніть мітку для деталей.</p>
-                    <div id="ops-map" class="leaflet-ops-map" style="height:380px;width:100%;min-height:320px;background:#1a1a1a;border:1px solid #2C2C2C;border-radius:4px"></div>
-                    <div id="op-info">Натисніть на мітку на карті — інформація про операцію</div>
-                </div>
-
         </section>
 
-        
-</div>
-
-
         <section id="heroes" class="section">
-                        <h2>7. Герої України</h2>
+            <h2>5. Герої України</h2>
             <div class="content-block">
-                <div class="hero-card">
-                    <div class="hero-photo-wrap">
-                        <img src="{{ url_for('static', filename='images/37/hero-serhii-maar.webp') }}" alt="С. Маар" class="hero-photo" onclick="openPhoto(this.src, this.alt)">
-                    </div>
-                    <div class="hero-text">
-                        <h4>1. Герой України старший сержант Маар Сергій Олегович</h4>
-                        <p class="decree">№ 416/2026 від 20.05.2026</p>
-                        <p>Шлях від стрільця до командира відділення на Харківському та Донецькому напрямках. У січні 2024 року – тяжке поранення в бою, тривала реабілітація. У травні 2025 повернувся в стрій і продовжив виконання бойових завдань на Донецькому та Дніпропетровському напрямках у складі бригади територіальної оборони та окремої механізованої бригади Збройних Сил України.</p>
-                        <p>Наприкінці листопада 2025 року під час бойових дій на північних околицях н.п. Іванівка Дніпропетровської області, старший сержант Маар С.О. разом з екіпажем «Валькірія» упродовж 3 днів здійснював інтенсивне вогневе ураження логістичного постачання противника, застосовуючи різні типи боєприпасів. Систематичним знищенням провізії та боєкомплекту, що доставлялися ворожими БпЛА, екіпаж суттєво підірвав бойові можливості противника, погіршив його морально-психологічний стан та не допустив накопичення сил на зайнятому рубежі. При цьому противнику було завдано 20 безповоротних та 14 санітарних втрат, що стало передумовою успішних дій сил оборони України, під час яких було взято в полон 14 військовослужбовців російської федерації.</p>
-                        <p>Завдяки бойовій роботі, керівництву та безпосередньої участі старшого сержанта Маара С.О. екіпаж БпЛА «Валькірія» здійснив понад 3750 бойових вильотів, виявив 1724 ворожих цілі, з яких понад 570 було знищено або уражено, що суттєво вплинуло на перебіг бойових дій у зоні відповідальності окремої бригади морської піхоти.</p>
-                    </div>
+                <div class="hero-grid">
+                    <article class="hero-tile">
+                        <img src="{{ url_for('static', filename='images/37/hero-serhii-maar.webp') }}" alt="Маар Сергій Олегович">
+                        <div class="hero-cap">
+                            <h4>Старший сержант Маар Сергій Олегович</h4>
+                            <p class="order">Орден «Золота Зірка»</p>
+                            <p class="decree">Указ Президента України від 20.05.2026 № 416/2026</p>
+                            <p>Шлях від стрільця до командира відділення. У січні 2024 року — тяжке поранення, у травні 2025 повернувся в стрій. Наприкінці листопада 2025 року разом з екіпажем «Валькірія» на північних околицях н.п. Іванівка Дніпропетровської області протягом трьох діб знищував логістику противника: 20 безповоротних і 14 санітарних втрат ворога, у полон взято 14 військовослужбовців. Екіпаж здійснив понад 3750 бойових вильотів, виявив 1724 цілі, понад 570 знищено або уражено.</p>
+                        </div>
+                    </article>
+                    <article class="hero-tile">
+                        <img src="{{ url_for('static', filename='images/37/hero-oleg-buyalo.webp') }}" alt="Буяло Олег Юрійович">
+                        <div class="hero-cap">
+                            <h4>Лейтенант Буяло Олег Юрійович (посмертно)</h4>
+                            <p class="order">Орден «Золота Зірка»</p>
+                            <p class="decree">Указ Президента України від 24.02.2024 № 101/2024</p>
+                            <p>З 05 травня по 13 червня 2023 року виконував бойові завдання на Донецькому напрямку. 19 травня 2023 року разом із підпорядкованим особовим складом прибув до н.п. Українка Донецької області, де готував наступальні дії у складі ОТУ «Донецьк». Завдання на лінії зіткнення виконував із високою відповідальністю та ініціативою.</p>
+                        </div>
+                    </article>
+                    <article class="hero-tile">
+                        <img src="{{ url_for('static', filename='images/37/hero-oleksandr-davydenko.webp') }}" alt="Давиденко Олександр Олександрович">
+                        <div class="hero-cap">
+                            <h4>Матрос Давиденко Олександр Олександрович (посмертно)</h4>
+                            <p class="order">Орден «Золота Зірка»</p>
+                            <p class="decree">Указ Президента України від 03.07.2026 № 575/2026</p>
+                            <p>У частині з 16 липня 2023 року. 8 листопада 2023 року в н.п. Кринки Херсонської області добровільно взяв управління човном для евакуації важкопораненого побратима. Під обстрілом подолав 12 км по Дніпру й передав пораненого медикам, врятувавши життя товариша ціною власного.</p>
+                        </div>
+                    </article>
                 </div>
+            </div>
+        </section>
 
-                <div class="hero-card">
-                    <div class="hero-photo-wrap">
-                        <img src="{{ url_for('static', filename='images/37/hero-oleg-buyalo.webp') }}" alt="О. Буяло" class="hero-photo" onclick="openPhoto(this.src, this.alt)">
-                    </div>
-                    <div class="hero-text">
-                        <h4>2. Герой України лейтенант Буяло Олег Юрійович (на щиті)</h4>
-                        <p class="decree">№ 101/2024 від 24.02.2024</p>
-                        <p>За час військової служби в 37 окремій бригаді морської піхоти зарекомендував себе дисциплінованим, ініціативним та грамотним офіцером. Був прикладом відданості військовій службі, народові України та справі Української державності.</p>
-                        <p>З 05 травня по 13 червня 2023 року офіцер виконував бойові (спеціальні) завдання з протидії збройної агресії російської федерації проти України на Донецькому напрямку.</p>
-                        <p>19 травня 2023 року лейтенант Буяло О.Ю. разом з підпорядкованим особовим складом прибув в н.п. Українка Донецької області, де розпочалась підготовка до наступальних дій у складі оперативно-тактичного угруповання «Донецьк» на іншому напрямку. Офіцер без вагань почав виконувати бойові завдання на лінії зіткнення з противником. Поставлені бойові завдання виконував з високою відповідальністю, при цьому проявляв розумну ініціативу і організованість. Відрізнявся високим почуттям відповідальності за доручену ділянку роботи.</p>
-                    </div>
+        <section id="cavaliers" class="section">
+            <h2>6. Повні кавалери державних орденів</h2>
+            <div class="content-block">
+                <h3 class="stats-kicker">Відзначені військовослужбовці</h3>
+                <div class="award-stats">
+                    <div><span class="num">889</span><span class="lbl">Державними нагородами</span></div>
+                    <div><span class="num">1 355</span><span class="lbl">Відомчими нагородами</span></div>
                 </div>
-
-                <div class="hero-card">
-                    <div class="hero-photo-wrap">
-                        <img src="{{ url_for('static', filename='images/37/hero-oleksandr-davydenko.webp') }}" alt="О. Давиденко" class="hero-photo" onclick="openPhoto(this.src, this.alt)">
-                    </div>
-                    <div class="hero-text">
-                        <h4>3. Герой України матрос Давиденко Олександр Олександрович (на щиті)</h4>
-                        <p class="decree">№ 575/2026 від 03.07.2026</p>
-                        <p>Морський піхотинець, у частині з липня 2023 року. 8 листопада 2023 під час евакуації пораненого побратима з н.п. КРИНКИ Херсонської області добровільно взяв на себе управління човном і подолав 12 км маршруту під вогнем противника, врятувавши життя товариша ціною власного.</p>
-                        <p>Протягом 2022 – 2023 років матрос Давиденко О.О. приймав безпосередню участь у бойових діях на Харківському та Донецькому напрямках у складі бригади територіальної оборони та окремої механізованої бригади Збройних Сил України. Матрос Давиденко О.О. долучився до лав військової частини А4548 16 липня 2023 року. Військовослужбовець пройшов шлях морського піхотинця, неодноразово проявляв мужність та рішучість під час виконанні завдань за призначенням. 08 листопада 2023 року приблизно о 10:00 в н.п. Кринки Херсонської області за інформації від командування підрозділу було важко поранено військовослужбовця. Попри всі ризики проводити евакуацію в денний час, матрос Давиденко О.О. першим добровільно відзивався бути драйвером човна, розуміючи, що стан побратима критичний і він потребує негайної евакуації. Майже з самого початку руху по р. Дніпро ворог помітив човен матроса Давиденко О.О. Незважаючи на обстріли з усіх наявних у противника засобів ураження, матрос Давиденко О.О. здолав 12 км маршруту, успішно евакуював пораненого військовослужбовця та передав його медикам, що врятувало життя побратима.</p>
-                    </div>
+                <p style="text-align:center;color:var(--muted)">станом на серпень 2026</p>
+                <div class="hero-grid cavalier-grid">
+                    <article class="hero-tile">
+                        <img src="{{ url_for('static', filename='images/37/commander-serhii-shatalov.webp') }}" alt="Шаталов Сергій Сергійович">
+                        <div class="hero-cap">
+                            <h4>Полковник Шаталов Сергій Сергійович</h4>
+                            <p class="order">Орден Богдана Хмельницького I ступеня</p>
+                            <p class="decree">Указ Президента України від 29.07.2025 № 559/2025</p>
+                            <p>З 25 жовтня 2024 року — командир військової частини А4548. Під його керівництвом бригада відбила масовані наступи в районах Успенівки, Янтарного, Зеленівки та Дачного Донецької області, далі виконує завдання у складі 20 армійського корпусу на Олександрівському напрямку.</p>
+                        </div>
+                    </article>
                 </div>
-
-                <h3>Список повних кавалерів державних орденів</h3>
-                <div class="hero-card">
-                    <div class="hero-photo-wrap">
-                        <img src="{{ url_for('static', filename='images/37/commander-serhii-shatalov.webp') }}" alt="С. Шаталов" class="hero-photo" onclick="openPhoto(this.src, this.alt)">
-                    </div>
-                    <div class="hero-text">
-                        <h4>Полковник Шаталов Сергій Сергійович</h4>
-                        <p class="decree">Орден Богдана Хмельницького I ступеня — Указ Президента України від 29.07.2025 №559/2025</p>
-                        <p>За час проходження служби зарекомендував себе виключно як грамотний, дисциплінований та досвідчений офіцер, командир. Відмінна теоретична та практична підготовка, а також накопичений досвід дозволяють йому вміло та якісно виконувати обов’язки за займаною посадою. 25 жовтня 2024 року полковник Шаталов С.С. призначений на посаду командира військової частини А4548. Під керівництвом офіцера бригада виконувала бойові (спеціальні) завдання у складі тактичної групи «Вугледар» на Донецькому напрямку. Під командуванням полковника Шаталова С.С. були відбиті масовані наступи противника, які проводилися за підтримки важкоброньованої техніки в напрямку населених пунктів Успенівка та Янтарне Донецької області. Завдяки правильному керуванню боєм полковником Шаталовим С.С., підрозділи військової частини А4548 відбивали штурми противника в районі населених пунктів Зеленівка та Дачне Донецької області. З 18.06.2025 по теперішній час – виконуються бойові (спеціальні) завдання у складі 20 армійського корпусу на Олександрівському напрямку.</p>
-                    </div>
-                </div>
-
-                <p class="awards-total"><strong>Загальна кількість нагороджених:</strong><br>
-                — державними нагородами – 889;<br>
-                — відомчими нагородами – 1355.</p>
             </div>
         </section>
 
         <section id="symbols" class="section">
-                        <h2>8. Символіка військової частини</h2>
+            <h2>7. Символіка військової частини</h2>
             <div class="content-block">
                 <h3>Нарукавний знак</h3>
                 <div class="symbol-block">
@@ -275,7 +217,7 @@
         </section>
 
         <section id="rituals" class="section">
-                        <h2>9. Власні ритуали та звичаї</h2>
+            <h2>8. Власні ритуали та звичаї</h2>
             <div class="content-block">
                 <p>Два рази на рік навесні, кожного року проводиться ритуал з подолання психологічної смуги перешкод морського піхотинця в якому військовослужбовець показує свої внутрішні якості, які він не зміг проявити за перше півріччя служби адже це перший критерій допуску до смуги. Цей ритуал не тільки про силу, а про вміння поєднувати в собі силу духу так і фізичну силу, витримку, психологічну стійкість та повагу та довіру в колективі. Другим критерієм допуску є дисципліна, яка показує його характер, відсутність шкідливих звичок та покарань. Об’єднавши ці якості в один механізм і пройшовши смугу, військовослужбовець отримує право носіння берету та стає взірцем для новоприбувшого особового складу в підрозділі. Ритуал підкріплений клятвою морського піхотинця.</p>
                 <p>Ми навчаємо військовослужбовців, які виявили бажання проходити додаткові навчання для підвищення кваліфікації, де прояв лідерства це риса – не про те як пише книга, а про те, як я можу, я хочу, про те як я вмію. Лідер – поєднання всіх рис характеру в одній особистості, це авторитет та довіра вищого щабля в підрозділі, без шансу зрадити своїм принципам та самому собі.</p>
@@ -287,19 +229,6 @@
                 <h3>Створення колективу, ідеї, ідентичності</h3>
                 <p>Відбувається на початку приєднання військовослужбовця до бригади після базової загальної військової підготовки. По завершенню курсу військовослужбовці отримають шеврони бригади, подяки, коїни. Кожен з них в ці моменти розуміє, що він не сам на сам з війною, а в мужній команді, яка постоїть за своїх. Отримані позитивні відгуки про дані заходи, сформували чітку позицію бригади та бачення напрямку руху. Даним заходом приєднуємо сімейні цінності до війська, такі підтримка, згуртованість, колективізм. Захід відбувається в сприятливій обстановці на вечірній зорі з факелами, вогнищами. Підкріпляємо обітницею морського піхотинця.</p>
 
-            </div>
-        </section>
-
-        <section id="places" class="section">
-            <h2>10. Місця сили</h2>
-            <div class="content-block">
-                <p>Місця бойового становлення бригади: Авдіївський напрямок, плацдарм у Кринках на лівому березі Дніпра, Старомайорське, Торецьк, Вугледарський та Олександрівський напрямки.</p>
-            </div>
-        </section>
-
-        <section id="info" class="section">
-            <h2>11. Інформаційний супровід</h2>
-            <div class="content-block">
                 <h3>Соціальні мережі</h3>
                 <div class="social-links">
 <a href="https://www.instagram.com/37obrmp/" target="_blank" rel="noopener" class="social-icon" title="instagram" aria-label="instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg></a>
@@ -320,7 +249,7 @@
         </section>
     </main>
 
-    <footer class="brigade-footer"><a href="/" class="back-link">← На головну</a><p>© 2026. All rights reserved.</p><p class="demo-note">Demonstration version. Not for distribution.</p></footer>
+    <footer class="brigade-footer"><a href="/" class="back-link">← На головну</a><p>© 2026. All rights reserved.</p></footer>
 
     <!-- Lightbox -->
     </div>
@@ -329,7 +258,6 @@
 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="{{ url_for('static', filename='brigade-nav.js') }}"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 
@@ -404,6 +332,31 @@
       if (e.key === 'ArrowRight') show(idx + 1);
     });
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.brigade-nav a[href^="#"]'));
+  var sections = navLinks.map(function(a){ return document.getElementById((a.getAttribute('href')||'').slice(1)); }).filter(Boolean);
+  function setNav(id){
+    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+  }
+  function updateNav(){
+    if (!sections.length) return;
+    var bar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--brigade-bar-h')) || 148;
+    var line = bar + 20;
+    var current = sections[0].id;
+    sections.forEach(function(s){ if (s.getBoundingClientRect().top <= line) current = s.id; });
+    setNav(current);
+  }
+  window.addEventListener('scroll', updateNav, {passive:true});
+  window.addEventListener('resize', updateNav);
+  navLinks.forEach(function(a){
+    a.addEventListener('click', function(){ var id=(a.getAttribute('href')||'').slice(1); if(id) setNav(id); });
+  });
+  updateNav();
 })();
 </script>
 
