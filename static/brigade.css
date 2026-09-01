@@ -1091,3 +1091,65 @@ body.page-37 .anatomy-figure img{
 body.page-37 .anatomy-figure{
   background:transparent;
 }
+
+.symbol-img, .award-sq, .coins-img{
+  background:transparent !important;
+}
+
+body.page-37 .flag-flip .flag-side{background:transparent !important}
+body.page-37 .regalia-banner{cursor:pointer}
+body.page-37 .regalia-quad .award-fig img{
+  width:100%;
+  max-width:420px;
+  height:280px;
+  object-fit:contain;
+  background:transparent !important;
+}
+
+.ritual-heading{
+  text-align:center !important;
+  color:#FFBD1B !important;
+  font-size:18px;
+  font-weight:700;
+  margin:28px 0 14px;
+  width:100%;
+}
+.ritual-carousel{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  max-width:860px;
+  margin:8px auto 24px;
+}
+.ritual-viewport{
+  width:100%;
+  overflow:hidden;
+}
+.ritual-slide{display:none;margin:0;text-align:center}
+.ritual-slide.is-active{display:block}
+.ritual-slide img{
+  width:100%;
+  max-height:440px;
+  object-fit:contain;
+  background:transparent;
+  display:block;
+  margin:0 auto;
+}
+.ritual-slide figcaption{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:8px;
+}
+.ritual-nav{display:none !important}
+.ritual-dots{
+  display:flex;justify-content:center;gap:7px;
+  margin-top:10px;
+}
+.ritual-dots button{
+  width:8px;height:8px;padding:0;border:0;border-radius:50%;
+  background:#5a5a5a;cursor:pointer;
+}
+.ritual-dots button.is-active{background:#FFBD1B}
+@media (max-width:560px){
+  .ritual-slide img{max-height:280px}
+}
