@@ -2,14 +2,13 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="icon" href="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" type="image/webp">
     <title>92 окрема штурмова бригада імені кошового отамана Івана Сірка</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}?v=92b">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}">
 </head>
-<body class="page-92">
+<body>
     <div class="brigade-bg"></div>
-
     <div class="brigade-top">
     <header class="brigade-header">
         <div class="header-left">
@@ -25,18 +24,17 @@
     </header>
 
     <nav class="brigade-nav">
-        <a href="#identification" class="active"><span class="nav-num">1.</span> Ідентифікація</a>
+        <a href="#identification"><span class="nav-num">1.</span> Ідентифікація</a>
         <a href="#history"><span class="nav-num">2.</span> Історія</a>
         <a href="#regalia"><span class="nav-num">3.</span> Регалії частини</a>
-        <a href="#combat-path"><span class="nav-num">4.</span> Бойовий шлях</a>
-        <a href="#heroes"><span class="nav-num">5.</span> Герої України</a>
-        <a href="#cavaliers"><span class="nav-num">6.</span> Кавалери</a>
+        <a href="#award"><span class="nav-num">4.</span> Почесна відзнака</a>
+        <a href="#combat-path"><span class="nav-num">5.</span> Бойовий шлях</a>
+        <a href="#heroes"><span class="nav-num">6.</span> Герої України</a>
         <a href="#symbols"><span class="nav-num">7.</span> Символіка</a>
         <a href="#rituals"><span class="nav-num">8.</span> Ритуали</a>
         <a href="#places"><span class="nav-num">9.</span> Місця сили</a>
         <a href="#info"><span class="nav-num">10.</span> Інфосупровід</a>
     </nav>
-
     </div>
     <div class="brigade-spacer" aria-hidden="true"></div>
 
@@ -62,95 +60,169 @@
 
         <section id="regalia" class="section">
             <h2>3. Регалії частини</h2>
-            <div class="content-block content-flat">
-                <h3>Бойовий прапор</h3>
-                <p>Бойовий Прапор від Президента України та почесну стрічку вручено у Києві 22 серпня 2019 року на Софійській площі.</p>
+            <div class="content-block">
+                <p>Бойовий Прапор від Президента України та почесну стрічку 92 ОШБр було вручено у місті Києві 22.08.2019 року на території Софійської площі за наказом Президента України — Верховного Головнокомандувача Збройних Сил України В. Зеленським.</p>
                 <div class="gallery">
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/1.webp') }}" alt="Бойовий прапор"><span>Бойовий прапор</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/2.webp') }}" alt="Почесні стрічки"><span>Почесні стрічки</span></div>
+                    <div class="gallery-item" onclick="openGallery('banner',0)"><img src="{{ url_for('static', filename='images/92/1.webp') }}" alt="Бойовий прапор" onclick="openPhoto(this.src, this.alt||'')" ><span>Бойовий прапор</span></div>
+                    <div class="gallery-item" onclick="openGallery('banner',1)"><img src="{{ url_for('static', filename='images/92/2.webp') }}" alt="Стрічки" onclick="openPhoto(this.src, this.alt||'')" ><span>Почесні стрічки</span></div>
                 </div>
-                <h3>Почесна відзнака «За мужність та відвагу»</h3>
-                <p>Відзнаку вручено у Харкові 22 серпня 2022 року на площі Свободи.</p>
+            </div>
+        </section>
+
+        <section id="award" class="section">
+            <h2>4. Почесна відзнака «За мужність та відвагу»</h2>
+            <div class="content-block">
+                <p>Відзнаку «За мужність та відвагу» 92 ОШБр вручено у місті Харків 22.08.2022 року на території площі Свободи за наказом Президента України — Верховного Головнокомандувача Збройних Сил України В. Зеленським.</p>
             </div>
         </section>
 
         <section id="combat-path" class="section">
-            <h2>4. Бойовий шлях</h2>
-            <div class="content-block content-flat">
-                <div class="ops-list">
-                    <article class="campaign"><h3>1. АТО / ООС</h3>
-                        <p class="ops-lead">З 2014 · Донецька та Луганська області</p>
-                        <div class="ops-full"><p>Іловайськ, Дебальцеве, Щастя, Трьохізбенка, Нижньотепле, Мар'їнка, Красногорівка, Верхньоторецьке, Авдіївка, Золоте, Попасна.</p></div></article>
-                    <article class="campaign"><h3>2. Харківський контрнаступ</h3>
-                        <p class="ops-lead">Вересень 2022 · Харківська область</p>
-                        <div class="ops-full"><p>Звільнення майже всієї Харківської області; далі — Стельмахівка — Новоселівське на Луганщині.</p></div></article>
-                    <article class="campaign"><h3>3. Бахмутський напрямок</h3>
-                        <p class="ops-lead">Березень 2023 · Часів Яр, Хромове</p>
-                        <div class="ops-full"><p>Оборона та штурмові дії на підступах до Бахмута.</p></div></article>
-                    <article class="campaign"><h3>4. Кліщіївка — Андріївка</h3>
-                        <p class="ops-lead">Літо 2023 · ударно-штурмові дії</p>
-                        <div class="ops-full"><p>Деокупація Кліщіївки та Андріївки.</p></div></article>
-                    <article class="campaign"><h3>5. Харківщина 2024</h3>
-                        <p class="ops-lead">Травень 2024 · Глибоке — Липці</p>
-                        <div class="ops-full"><p>Зупинено повторну спробу захопити Харків.</p></div></article>
-                    <article class="campaign"><h3>6. Курський напрямок</h3>
-                        <p class="ops-lead">Серпень 2024</p>
-                        <div class="ops-full"><p>Участь у наступальній операції на Курському напрямку.</p></div></article>
-                    <article class="campaign"><h3>7. Добропільський напрямок</h3>
-                        <p class="ops-lead">Осінь 2025 — дотепер</p>
-                        <div class="ops-full"><p>Добропільський контрнаступ; далі — стик Дніпропетровської, Донецької та Запорізької областей. Оборона ключових напрямків Харківщини, Покровського та Добропільського напрямків.</p></div></article>
-                </div>
+            <h2>5. Бойовий шлях</h2>
+            <div class="content-block">
+                <h3>Основні військові операції та райони бойових дій</h3>
+                <ul class="timeline">
+                    <li><strong>З 2014:</strong> АТО/ООС — Іловайськ, Дебальцеве, Щастя, Трьохізбенка, Нижньотепле, Мар'їнка, Красногорівка, Верхньоторецьке, Авдіївка, Золоте, Попасна</li>
+                    <li><strong>Вересень 2022:</strong> контрнаступ, звільнення майже всієї Харківської області; далі — Стельмахівка — Новоселівське (Луганщина)</li>
+                    <li><strong>Березень 2023:</strong> Бахмутський напрямок — Часів Яр, Хромове</li>
+                    <li><strong>Літо 2023:</strong> ударно-штурмові дії — Кліщіївка, Андріївка (деокупація)</li>
+                    <li><strong>Травень 2024:</strong> зупинено спробу захопити Харків (Глибоке–Липці)</li>
+                    <li><strong>Серпень 2024:</strong> Курський напрямок</li>
+                    <li><strong>Осінь 2025:</strong> Добропільський контрнаступ; далі — стик Дніпропетровської, Донецької та Запорізької областей</li>
+                </ul>
                 <div class="gallery">
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/3.webp') }}" alt="Бойова робота"><span>Бойова робота</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/4.webp') }}" alt="БпЛА"><span>БпЛА</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/5.webp') }}" alt="Штурм"><span>Штурм</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/6.webp') }}" alt="Техніка"><span>Техніка</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/7.webp') }}" alt="Боєць"><span>Боєць</span></div>
-                    <div class="gallery-item"><img src="{{ url_for('static', filename='images/92/8.webp') }}" alt="Зв'язок"><span>Зв'язок</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',0)"><img src="{{ url_for('static', filename='images/92/3.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Бойова робота</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',1)"><img src="{{ url_for('static', filename='images/92/4.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>БпЛА</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',2)"><img src="{{ url_for('static', filename='images/92/5.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Штурм</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',3)"><img src="{{ url_for('static', filename='images/92/6.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Техніка</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',4)"><img src="{{ url_for('static', filename='images/92/7.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Боєць</span></div>
+                    <div class="gallery-item" onclick="openGallery('path',5)"><img src="{{ url_for('static', filename='images/92/8.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Зв'язок</span></div>
+                </div>
+                <div class="ua-map-wrap">
+                    <h3>Карта України — райони бойових дій</h3>
+                    <p class="map-hint">Інтерактивна карта. Натисніть мітку для деталей.</p>
+                    <div id="ops-map" class="leaflet-ops-map" style="height:380px;width:100%;min-height:320px;background:#1a1a1a;border:1px solid #2C2C2C;border-radius:4px"></div>
+                    <div id="op-info">Натисніть на мітку на карті — інформація про операцію</div>
                 </div>
             </div>
         </section>
 
         <section id="heroes" class="section">
-            <h2>5. Герої України</h2>
+            <h2>6. Герої України</h2>
             <div class="content-block">
-                <div class="hero-grid">
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/9.webp') }}" alt="Божок Василь Миколайович"><div class="hero-cap"><h4>Підполковник Божок Василь Миколайович</h4><p class="order">Орден «Золота Зірка»</p><p>Брав участь у бойових діях з 2015 року. Відзначився під час боїв за Дебальцеве та Логвинове. У лютому 2015 екіпаж під його командуванням знищив три Т-72. З початком повномасштабного вторгнення — Харківщина.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/10.webp') }}" alt="Агасиєв Кирило Яшар Огли"><div class="hero-cap"><h4>Капітан Агасиєв Кирило Яшар Огли</h4><p class="order">Орден «Золота Зірка»</p><p>Заступник командира штурмового батальйону. Підрозділ знищив 2 Т-72, 3 МТЛБ, БМП-2, 2 вантажівки та близько 10 військовослужбовців противника.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/11.webp') }}" alt="Кулагін Родіон Анатолійович"><div class="hero-cap"><h4>Полковник Кулагін Родіон Анатолійович</h4><p class="order">Орден «Золота Зірка»</p><p>Очолив артилерійські підрозділи під час оборони Харківщини. Дії на напрямках Куп'янськ — Великий Бурлук — Золочів.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/12.webp') }}" alt="Федосенко Павло Юрійович"><div class="hero-cap"><h4>Полковник Федосенко Павло Юрійович</h4><p class="order">Орден «Золота Зірка»</p><p>З 06.05.2020 очолював бригаду. Організував оборону Харкова, звільнення Малої Рогані, Вільхівки, Старого Салтова; контрнаступ на Харківщині 2022.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/13.webp') }}" alt="Царенко Андрій Юрійович"><div class="hero-cap"><h4>Підполковник Царенко Андрій Юрійович</h4><p class="order">Орден «Золота Зірка»</p><p>АТО/ООС, оборона Харківщини. Організація розвідувального забезпечення та бойових завдань.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/14.webp') }}" alt="Настенко Олександр Миколайович"><div class="hero-cap"><h4>Майор Настенко Олександр Миколайович</h4><p class="order">Орден «Золота Зірка»</p><p>Створив «CODE 9.2» — підрозділ ударних БпЛА. У 2022–2023 бійці знищили понад 2 тисячі окупантів.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/15.webp') }}" alt="Єлецький Дмитро Юрійович"><div class="hero-cap"><h4>Лейтенант Єлецький Дмитро Юрійович (посмертно)</h4><p class="order">Орден «Золота Зірка»</p><p>Командир роти БпАК. Ліквідовано щонайменше 230 окупантів, знищено Т-72, БМП, гаубиці. Курщина 2024–2025.</p></div></article>
-                </div>
-                <h3>Звання Героя України присвоєно посмертно</h3>
-                <ul class="timeline">
-                    <li>Адамовський Олег Олегович — Указ № 201/2022 від 02.04.2022.</li>
-                    <li>Миршавий Олексій Вікторович — Указ № 394/2023 від 08.07.2023.</li>
-                    <li>Храпко Євген Вікторович — Указ № 399/2023 від 08.07.2023.</li>
-                    <li>Щоголев Іван Євгенович — Указ № 410/2023 від 08.07.2023.</li>
-                    <li>Дробіленко Андрій Іванович — Указ № 656/2023 від 29.09.2023.</li>
-                    <li>Єрофєєв Макар Володимирович — Указ № 557/2024 від 23.08.2024.</li>
-                </ul>
-            </div>
-        </section>
+                <h3>Герої України</h3>
 
-        <section id="cavaliers" class="section">
-            <h2>6. Повні кавалери державних орденів</h2>
-            <div class="content-block">
-                <h3 class="stats-kicker">Відзначені військовослужбовці</h3>
-                <div class="award-stats">
-                    <div><span class="num">5</span><span class="lbl">Орден «Золота Зірка»</span></div>
-                    <div><span class="num">46</span><span class="lbl">Орден Богдана Хмельницького</span></div>
-                    <div><span class="num">1 003</span><span class="lbl">Орден «За мужність»</span></div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/9.webp') }}" alt="Божок" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Божок Василь Миколайович</h4>
+                        <p>Брав участь у бойових діях з 2015 року. Відзначився під час боїв за Дебальцеве та Логвинове. У лютому 2015 екіпаж під його командуванням знищив три Т-72. З початком повномасштабного вторгнення — Харківщина.</p>
+                    </div>
                 </div>
-                <p style="text-align:center;color:var(--muted)">станом на серпень 2026</p>
-                <div class="hero-grid cavalier-grid">
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/18.webp') }}" alt="Нащубський Віталій Іванович"><div class="hero-cap"><h4>Полковник Нащубський Віталій Іванович</h4><p class="order">Орден Богдана Хмельницького I ступеня</p><p class="decree">Указ № 685/2025 від 05.08.2025</p><p>Командир військової частини з 03.08.2024. Оборона Харкова, штурмові дії на Дніпропетровщині.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/19.webp') }}" alt="Третяк Андрій Олександрович"><div class="hero-cap"><h4>Підполковник Третяк Андрій Олександрович</h4><p>Заступник командира бригади. Утримання стратегічних позицій, умови для наступальних дій.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/20.webp') }}" alt="Лешко Костянтин Сергійович"><div class="hero-cap"><h4>Підполковник Лешко Костянтин Сергійович</h4><p class="order">Орден «За мужність» I ступеня</p><p class="decree">№ 346 від 27.04.2026</p><p>Командир штурмового батальйону. Харків, Андріївка, Кліщіївка, Хромове.</p></div></article>
-                    <article class="hero-tile"><img src="{{ url_for('static', filename='images/92/21.webp') }}" alt="Сторожук Єгор Ігорович"><div class="hero-cap"><h4>Майор Сторожук Єгор Ігорович</h4><p>Командир штурмового батальйону. Бахмутський, Курський, Покровський напрямки.</p></div></article>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/10.webp') }}" alt="Агасиєв" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Капітан Агасиєв Кирило Яшар Огли</h4>
+                        <p>Заступник командира штурмового батальйону. Підрозділ знищив 2 Т-72, 3 МТЛБ, БМП-2, 2 вантажівки та близько 10 військовослужбовців противника.</p>
+                    </div>
                 </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/11.webp') }}" alt="Кулагін" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Кулагін Родіон Анатолійович</h4>
+                        <p>Очолив артилерійські підрозділи під час оборони Харківщини. Дії на напрямках Куп'янськ — Великий Бурлук — Золочів.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/12.webp') }}" alt="Федосенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Федосенко Павло Юрійович</h4>
+                        <p>З 06.05.2020 очолював бригаду. Організував оборону Харкова, звільнення Малої Рогані, Вільхівки, Старого Салтова та інших н.п.; контрнаступ на Харківщині 2022.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/13.webp') }}" alt="Царенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Царенко Андрій Юрійович</h4>
+                        <p>АТО/ООС, оборона Харківщини. Організація розвідувального забезпечення та бойових завдань.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/14.webp') }}" alt="Настенко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Майор Настенко Олександр Миколайович</h4>
+                        <p>Створив «CODE 9.2» — підрозділ ударних БпЛА. У 2022–2023 бійці знищили понад 2 тисячі окупантів.</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/15.webp') }}" alt="Єлецький" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Лейтенант Єлецький Дмитро Юрійович</h4>
+                        <p>Командир роти БпАК. Ліквідовано щонайменше 230 окупантів, знищено Т-72, БМП, гаубиці. Курщина 2024–2025. Звання присвоєно посмертно (фото 15, 16).</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src, 'Єлецький')"><img src="{{ url_for('static', filename='images/92/16.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Єлецький Д.Ю.</span></div>
+                    <div class="gallery-item" onclick="openPhoto(this.querySelector('img').src, 'Золота Зірка')"><img src="{{ url_for('static', filename='images/92/17.webp') }}" alt="" onclick="openPhoto(this.src, this.alt||'')" ><span>Золота Зірка</span></div>
+                </div>
+
+                <h3>Звання Героя України присвоєно посмертно</h3>
+                <ul>
+                    <li>Адамовський Олег Олегович — Указ № 201/2022 від 02.04.2022</li>
+                    <li>Миршавий Олексій Вікторович — Указ № 394/2023 від 08.07.2023</li>
+                    <li>Храпко Євген Вікторович — Указ № 399/2023 від 08.07.2023</li>
+                    <li>Щоголев Іван Євгенович — Указ № 410/2023 від 08.07.2023</li>
+                    <li>Дробіленко Андрій Іванович — Указ № 656/2023 від 29.09.2023</li>
+                    <li>Єрофєєв Макар Володимирович — Указ № 557/2024 від 23.08.2024</li>
+                </ul>
+
+                <h3>Повні кавалери державних орденів</h3>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/18.webp') }}" alt="Нащубський" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Полковник Нащубський Віталій Іванович</h4>
+                        <p class="decree">Орден Богдана Хмельницького I ступеня — Указ № 685/2025 від 05.08.2025</p>
+                        <p>Командир військової частини з 03.08.2024. Оборона Харкова, штурмові дії на Дніпропетровщині.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/19.webp') }}" alt="Третяк" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Третяк Андрій Олександрович</h4>
+                        <p>Заступник командира бригади. Утримання стратегічних позицій, умови для наступальних дій.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/20.webp') }}" alt="Лешко" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Підполковник Лешко Костянтин Сергійович</h4>
+                        <p class="decree">Орден «За мужність» І ступеня №346 від 27.04.2026</p>
+                        <p>Командир штурмового батальйону. Харків, Андріївка, Кліщіївка, Хромове.</p>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-photo-wrap"><img class="hero-photo" src="{{ url_for('static', filename='images/92/21.webp') }}" alt="Сторожук" onclick="openPhoto(this.src, this.alt)"></div>
+                    <div class="hero-text">
+                        <h4>Майор Сторожук Єгор Ігорович</h4>
+                        <p>Командир штурмового батальйону. Бахмутський, Курський, Покровський напрямки.</p>
+                    </div>
+                </div>
+
+                <h3>Нагороди бригади (загалом)</h3>
+                <ul>
+                    <li>Орден «Золота Зірка»: 5 (6 посмертно; 2 служать у 92 ОШБр)</li>
+                    <li>Орден Богдана Хмельницького І / ІІ / ІІІ ст.: 5 / 20 / 21</li>
+                    <li>Орден Данила Галицького: 7</li>
+                    <li>Орден «За мужність» І / ІІ / ІІІ ст.: 1 / 38 / 964</li>
+                    <li>Медаль «За військову службу Україні»: 582</li>
+                    <li>Медаль «Захиснику Вітчизни»: 2746</li>
+                    <li>Відзнака «За оборону України»: 106</li>
+                </ul>
             </div>
         </section>
 
@@ -239,12 +311,13 @@
         </section>
     </main>
 
-    <footer class="brigade-footer"><a href="/" class="back-link">← На головну</a><p>© 2026. All rights reserved.</p></footer>
+    <footer class="brigade-footer"><a href="/" class="back-link">← На головну</a><p>© 2026. All rights reserved.</p><p class="demo-note">Demonstration version. Not for distribution.</p></footer>
 
     </div>
 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="{{ url_for('static', filename='brigade-nav.js') }}"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 
@@ -319,31 +392,6 @@
       if (e.key === 'ArrowRight') show(idx + 1);
     });
   });
-})();
-</script>
-
-
-<script>
-(function(){
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.brigade-nav a[href^="#"]'));
-  var sections = navLinks.map(function(a){ return document.getElementById((a.getAttribute('href')||'').slice(1)); }).filter(Boolean);
-  function setNav(id){
-    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
-  }
-  function updateNav(){
-    if (!sections.length) return;
-    var bar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--brigade-bar-h')) || 148;
-    var line = bar + 20;
-    var current = sections[0].id;
-    sections.forEach(function(s){ if (s.getBoundingClientRect().top <= line) current = s.id; });
-    setNav(current);
-  }
-  window.addEventListener('scroll', updateNav, {passive:true});
-  window.addEventListener('resize', updateNav);
-  navLinks.forEach(function(a){
-    a.addEventListener('click', function(){ var id=(a.getAttribute('href')||'').slice(1); if(id) setNav(id); });
-  });
-  updateNav();
 })();
 </script>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='images/common/zsu-emblem.webp') }}" type="image/webp">
     <title>37-ма окрема бригада морської піхоти | На хвилі Перемоги</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}?v=37e">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brigade.css') }}?v=37v">
 </head>
 <body class="page-37">
     <div class="brigade-bg page37-live-bg" aria-hidden="true">
@@ -48,8 +48,8 @@
             <div class="content-block content-flat">
                 <p><strong>Повна офіційна назва:</strong> 37 окрема бригада морської піхоти 30 корпусу морської піхоти Військово-Морських Сил України.</p>
                 <p><strong>Рід військ:</strong> Військово-Морські Сили ЗС України.</p>
-                <p><strong>Оперативне підпорядкування</strong> (з'єднання, АК, ОК): 20 АК</p>
-                <p><strong>Гасло:</strong> «На хвилі перемоги»</p>
+                <p><strong>Оперативне підпорядкування</strong> (з'єднання, АК, ОК): 20 АК.</p>
+                <p><strong>Гасло:</strong> «На хвилі перемоги».</p>
                 <p><strong>День військової частини:</strong> 12.01.2023.</p>
             </div>
         </section>
@@ -72,21 +72,21 @@
                 </button>
                 <p class="flag-pair-cap">Фото Бойовий прапор — лицьова сторона і тильна сторона</p>
             </div>
-            <div class="regalia-banner" style="background-image:url('{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}')" data-src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}">
-                <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" alt="Церемонія передачі бойового прапора" class="banner-photo-src">
+            <div class="regalia-banner" style="background-image:url('{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}')" data-src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" data-caption="Церемонія вручення бойового прапору">
+                <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" alt="Церемонія вручення бойового прапору" class="banner-photo-src">
                 <p>01 жовтня 2023 року президент України Верховний Головнокомандувач Збройних Сил України вручив командиру 37 окремої бригади морської піхоти Бойовий Прапор та Грамоту Президента України.</p>
             </div>
             <div class="regalia-quad">
+                <figure class="award-fig">
+                    <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-3.webp') }}" alt="Церемонія передачі бойового прапора">
+                    <figcaption>Церемонія передачі бойового прапора.</figcaption>
+                </figure>
                 <figure class="award-fig">
                     <img src="{{ url_for('static', filename='images/37/37-banner-certificate.webp') }}" alt="Грамота Президента України">
                     <figcaption>Грамота президента України про вручення бойового прапору 37 окремій бригаді морської піхоти.</figcaption>
                 </figure>
                 <figure class="award-fig">
-                    <img src="{{ url_for('static', filename='images/37/37-banner-ceremony-1.webp') }}" alt="Церемонія передачі бойового прапора">
-                    <figcaption>Церемонія передачі бойового прапора.</figcaption>
-                </figure>
-                <figure class="award-fig">
-                    <img src="{{ url_for('static', filename='images/37/37-award-courage.webp') }}" alt="Почесна відзнака За мужність та відвагу">
+                    <img src="{{ url_for('static', filename='images/37/37-award-courage.webp') }}?v=nb" alt="Почесна відзнака За мужність та відвагу">
                     <figcaption>23 травня 2025 року – Указом Президента України від 23.05.2023 № 316/2025 нагороджена почесною відзнакою «За мужність та відвагу».</figcaption>
                 </figure>
                 <figure class="award-fig">
@@ -278,9 +278,9 @@
                         </div>
                         <figure class="anatomy-figure">
                             <img src="{{ url_for('static', filename='images/37/37-sleeve-clear.webp') }}" alt="Нарукавний знак 37 ОБрМП">
-                            <button type="button" class="anatomy-dot" style="left:50%;top:8%" data-key="ribbon" aria-label="Девізна стрічка"></button>
+                            <button type="button" class="anatomy-dot" style="left:50%;top:calc(8% + 4px)" data-key="ribbon" aria-label="Девізна стрічка"></button>
                             <button type="button" class="anatomy-dot" style="left:51%;top:46%" data-key="lion" aria-label="Окрилений морський лев"></button>
-                            <button type="button" class="anatomy-dot" style="left:24%;top:68%" data-key="field" aria-label="Поле щита"></button>
+                            <button type="button" class="anatomy-dot" style="left:calc(24% + 4px);top:68%" data-key="field" aria-label="Поле щита"></button>
                         </figure>
                         <div class="anatomy-col anatomy-col-right">
                             <div class="anatomy-item" data-key="lion">
@@ -307,11 +307,115 @@
         <section id="rituals" class="section">
             <h2>8. Власні ритуали та звичаї</h2>
             <div class="content-block">
+                <h3 class="ritual-heading">Психологічна смуга перешкод морського піхотинця з врученням берета</h3>
+                <div class="ritual-carousel" data-carousel>
+                    <div class="ritual-viewport">
+                    <figure class="ritual-slide is-active">
+                        <img src="{{ url_for('static', filename='images/37/rituals/obstacle-1.webp') }}" alt="Військовослужбовець під час проходження психологічної смуги перешкод">
+                        <figcaption>Військовослужбовець під час проходження психологічної смуги перешкод</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/obstacle-2.webp') }}" alt="Військовослужбовці після проходження смуги перешкод">
+                        <figcaption>Військовослужбовці після проходження смуги перешкод</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/obstacle-3.webp') }}" alt="Військовослужбовці після проходження смуги перешкод">
+                        <figcaption>Військовослужбовці після проходження смуги перешкод</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/beret-after.webp') }}" alt="Військовослужбовці після церемонії вручення берета морського піхотинця">
+                        <figcaption>Військовослужбовці після церемонії вручення берета морського піхотинця</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/oath-1.webp') }}" alt="Військовослужбовці складають клятву морського піхотинця">
+                        <figcaption>Військовослужбовці складають клятву морського піхотинця</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/oath-2.webp') }}" alt="Військовослужбовці складають клятву морського піхотинця 2">
+                        <figcaption>Військовослужбовці складають клятву морського піхотинця 2</figcaption>
+                    </figure>
+                    </div>
+                    <div class="ritual-dots" aria-hidden="true"></div>
+                </div>
                 <p>Два рази на рік навесні, кожного року проводиться ритуал з подолання психологічної смуги перешкод морського піхотинця в якому військовослужбовець показує свої внутрішні якості, які він не зміг проявити за перше півріччя служби адже це перший критерій допуску до смуги. Цей ритуал не тільки про силу, а про вміння поєднувати в собі силу духу так і фізичну силу, витримку, психологічну стійкість та повагу та довіру в колективі. Другим критерієм допуску є дисципліна, яка показує його характер, відсутність шкідливих звичок та покарань. Об’єднавши ці якості в один механізм і пройшовши смугу, військовослужбовець отримує право носіння берету та стає взірцем для новоприбувшого особового складу в підрозділі. Ритуал підкріплений клятвою морського піхотинця, що не маловажно при встановлені культу воїна.</p>
+
+                <h3 class="ritual-heading">Випуск сержантських курсів</h3>
+                <div class="ritual-carousel" data-carousel>
+                    <div class="ritual-viewport">
+                    <figure class="ritual-slide is-active">
+                        <img src="{{ url_for('static', filename='images/37/rituals/sergeant-1.webp') }}" alt="Випуск курсу сержантів">
+                        <figcaption>Випуск курсу сержантів</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/sergeant-2.webp') }}" alt="Випуск курсу сержантів 2">
+                        <figcaption>Випуск курсу сержантів 2</figcaption>
+                    </figure>
+                    </div>
+                    <div class="ritual-dots" aria-hidden="true"></div>
+                </div>
                 <p>Ми навчаємо військовослужбовців, які виявили бажання проходити додаткові навчання для підвищення кваліфікації, де прояв лідерства це риса – не про те як пише книга, а про те, як я можу, я хочу, про те як я вмію. Лідер – поєднання всіх рис характеру в одній особистості, це авторитет та довіра вищого щабля в підрозділі, без шансу зрадити своїм принципам та самому собі. Випуск сержантів проходить церемоніально в польових умовах, з обітницею сержантського корпусу та нагородженнями.</p>
+
                 <h3>Ритуали вшанування загиблих побратимів</h3>
+                <div class="ritual-carousel" data-carousel>
+                    <div class="ritual-viewport">
+                    <figure class="ritual-slide is-active">
+                        <img src="{{ url_for('static', filename='images/37/rituals/families-1.webp') }}" alt="Зустріч представників бригади із сім’ями полеглих військовослужбовців">
+                        <figcaption>Зустріч представників бригади із сім’ями полеглих військовослужбовців</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/families-2.webp') }}" alt="Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади">
+                        <figcaption>Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/families-4.webp') }}" alt="Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади (1)">
+                        <figcaption>Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади (1)</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/families-3.webp') }}" alt="Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади (2)">
+                        <figcaption>Капелан бригади під час зустрічі із сім’ями полеглих військовослужбовців бригади (2)</figcaption>
+                    </figure>
+                    </div>
+                    <div class="ritual-dots" aria-hidden="true"></div>
+                </div>
                 <p>В 37 ОБРМП до ритуалів відносимо зустрічі із родинами загиблих військовослужбовців з заходами душпастирської роботи. Прояв підтримки родин героїв, які на алтар поклали найцінніше – життя. Найкращі фахівці з психологічної роботи та капелан регіонально виїздять, щоб поспілкуватись з родинами, вислухати їх, та надати підтримку психологічну, душпастирську, в окремих випадках фінансову. Не залишаючи сам на сам родини, виявляємо прояв любові та пам’яті про наших побратимів, що «На віки в строю». Окремим етапом заходу спільна молитва за упокоєння душ загиблих воїнів, нагородження медалями/орденами «посмертно» морських піхотинців, врученням меморіальних табличок, та подарунків дітям.</p>
                 <h3>Створення колективу, ідеї, ідентичності</h3>
+                <div class="ritual-carousel" data-carousel>
+                    <div class="ritual-viewport">
+                    <figure class="ritual-slide is-active">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-1.webp') }}" alt="Церемонія завершення курсу БЗВП">
+                        <figcaption>Церемонія завершення курсу БЗВП</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-2.webp') }}" alt="Церемонія завершення курсу БЗВП 2">
+                        <figcaption>Церемонія завершення курсу БЗВП 2</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-3.webp') }}" alt="Церемонія завершення курсу БЗВП 3">
+                        <figcaption>Церемонія завершення курсу БЗВП 3</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-4.webp') }}" alt="Церемонія завершення курсу БЗВП 4">
+                        <figcaption>Церемонія завершення курсу БЗВП 4</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-5.webp') }}" alt="Церемонія завершення курсу БЗВП 5">
+                        <figcaption>Церемонія завершення курсу БЗВП 5</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-6.webp') }}" alt="Церемонія завершення курсу БЗВП 6">
+                        <figcaption>Церемонія завершення курсу БЗВП 6</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-7.webp') }}" alt="Церемонія завершення курсу БЗВП 7">
+                        <figcaption>Церемонія завершення курсу БЗВП 7</figcaption>
+                    </figure>
+                    <figure class="ritual-slide">
+                        <img src="{{ url_for('static', filename='images/37/rituals/bzvp-8.webp') }}" alt="Церемонія завершення курсу БЗВП 8">
+                        <figcaption>Церемонія завершення курсу БЗВП 8</figcaption>
+                    </figure>
+                    </div>
+                    <div class="ritual-dots" aria-hidden="true"></div>
+                </div>
                 <p>Створення колективу, ідеї, ідентичності, та ще одна традиція в 37 ОБРМП. Відбувається на початку приєднання військовослужбовця до бригади після базової загальної військової підготовки. По завершенню курсу військовослужбовці отримають шеврони бригади, подяки, коїни. Кожен з них в ці моменти розуміє, що він не сам на сам з війною, а в мужній команді, яка по стоїть за своїх. Отримані позитивні відгуки про дані заходи, сформували чітку позицію бригади та бачення напрямку руху. Даним заходом приєднуємо сімейні цінності до війська, такі підтримка, згуртованість, колективізм. Захід відбувається в сприятливій обстановці на вечірній зорі з факелами, вогнищами. Підкріпляємо обітницею морського піхотинця.</p>
             </div>
         </section>
@@ -427,12 +531,30 @@
     document.querySelectorAll('#lightbox, .lightbox').forEach(function(n){ n.remove(); });
     ensureLightbox();
     collect();
+    document.querySelectorAll('.regalia-banner').forEach(function(b){
+      b.style.cursor='pointer';
+      b.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        var src = b.getAttribute('data-src') || (b.querySelector('img') && b.querySelector('img').src);
+        if (src && window.openPhoto) openPhoto(src, b.getAttribute('data-caption') || 'Церемонія вручення бойового прапору');
+      });
+    });
     document.querySelectorAll('main img, .section img, .gallery img').forEach(function(img){
       if (img.closest('.flag-flip')) return;
       if (img.id === 'lb-img') return;
       img.style.cursor = 'pointer';
       img.onclick = function(e){
         e.preventDefault(); e.stopPropagation();
+        var car = img.closest('[data-carousel]');
+        if (car) {
+          gallery = [];
+          car.querySelectorAll('.ritual-slide img').forEach(function(im){
+            gallery.push({src: im.currentSrc || im.src, alt: im.alt || ''});
+          });
+          var i = gallery.findIndex(function(g){ return g.src === (img.currentSrc || img.src); });
+          show(i < 0 ? 0 : i);
+          return;
+        }
         openPhoto(img.currentSrc || img.src, img.alt || '');
       };
     });
@@ -590,6 +712,32 @@
     setTimeout(drawAnatomyWires, 400);
 
     }
+
+    document.querySelectorAll('[data-carousel]').forEach(function(box){
+      var slides = Array.prototype.slice.call(box.querySelectorAll('.ritual-slide'));
+      var i = 0;
+      var dotsBox = box.querySelector('.ritual-dots');
+      function go(n){
+        if (!slides.length) return;
+        i = (n + slides.length) % slides.length;
+        slides.forEach(function(s,k){ s.classList.toggle('is-active', k===i); });
+        if (dotsBox) Array.prototype.forEach.call(dotsBox.children, function(d,k){ d.classList.toggle('is-active', k===i); });
+      }
+      if (dotsBox) {
+        dotsBox.innerHTML = '';
+        slides.forEach(function(_,k){
+          var b=document.createElement('button');
+          b.type='button';
+          b.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); go(k); });
+          dotsBox.appendChild(b);
+        });
+      }
+      var prev=box.querySelector('.ritual-prev');
+      var next=box.querySelector('.ritual-next');
+      if (prev) prev.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); go(i-1); });
+      if (next) next.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); go(i+1); });
+      go(0);
+    });
   });
 })();
 </script>
